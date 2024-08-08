@@ -34,12 +34,15 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install --no-transfer-progress
+        working-directory: back
 
       - name: Run tests
         run: mvn test --no-transfer-progress
+        working-directory: back
 
       - name: Package application
         run: mvn package --no-transfer-progress
+        working-directory: back
 
       - name: Archive JAR file
         if: success()
